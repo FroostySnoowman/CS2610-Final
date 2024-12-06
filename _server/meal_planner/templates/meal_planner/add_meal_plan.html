@@ -1,0 +1,11 @@
+<h1>Add Meal Plan</h1>
+<form method="POST">
+    {% csrf_token %}
+    <label>Date: <input type="date" name="week_start"></label><br>
+    <label>Recipes:</label><br>
+    {% for recipe in recipes %}
+    <label><input type="checkbox" name="recipes" value="{{ recipe.id }}"> {{ recipe.title }}</label><br>
+    {% endfor %}
+    <button type="submit">Add Meal Plan</button>
+</form>
+<a href="{% url 'meal_plan_list' %}">Back to Meal Plans</a>

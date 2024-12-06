@@ -1,0 +1,31 @@
+{% extends "registration/base.html" %}
+
+{% block title %}Sign Up{% endblock %}
+
+{% block content %}
+<h2>Create Account</h2>
+{% if error %}
+  <p style="color: red; text-align: center;">{{ error }}</p>
+{% endif %}
+<form action="/registration/sign_up/" method="post">
+  {% csrf_token %}
+  <label>
+    First Name
+    <input type="text" name="first_name" required>
+  </label>
+  <label>
+    Last Name
+    <input type="text" name="last_name" required>
+  </label>
+  <label>
+    Email
+    <input type="email" name="email" required>
+  </label>
+  <label>
+    Password
+    <input type="password" name="password" required>
+  </label>
+  <button type="submit">Create Account</button>
+</form>
+<a href="/registration/sign_in/">Already have an account? Sign In</a>
+{% endblock %}

@@ -1,0 +1,9 @@
+<h1>Add Recipe</h1>
+<form method="POST">
+    {% csrf_token %}
+    <label>Title: <input type="text" name="title"></label><br>
+    <label>Ingredients: <textarea name="ingredients"></textarea></label><br>
+    <label>Instructions: <textarea name="instructions"></textarea></label><br>
+    <button type="submit">Add Recipe</button>
+</form>
+<a href="{% url 'recipe_list' %}">Back to Recipes</a>

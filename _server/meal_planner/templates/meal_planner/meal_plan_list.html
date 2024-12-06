@@ -1,0 +1,7 @@
+<h1>Your Meal Plans</h1>
+<ul>
+    {% for plan in meal_plans %}
+    <li>{{ plan.week_start }}: {{ plan.recipes.all|join:', ' }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_meal_plan' %}">Add Meal Plan</a>

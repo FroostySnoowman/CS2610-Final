@@ -1,0 +1,7 @@
+<h1>Your Recipes</h1>
+<ul>
+    {% for recipe in recipes %}
+    <li>{{ recipe.title }} - {{ recipe.ingredients }}</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_recipe' %}">Add Recipe</a>
